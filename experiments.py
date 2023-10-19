@@ -169,21 +169,27 @@ for column in x:
 
 
 #### normalize data ###
-kortosis_np = preprocessing.normalize(kortosis_np)
-a_factor_np = preprocessing.normalize(a_factor_np)
-std_np = preprocessing.normalize(std_np)
-sum_np = preprocessing.normalize(sum_np)
-ptp_np = preprocessing.normalize(ptp_np)
-skewness_np = preprocessing.normalize(skewness_np)
-sum_of_squares_np = preprocessing.normalize(sum_of_squares_np)
-margin_factor_np = preprocessing.normalize(margin_factor_np)
-min_np = preprocessing.normalize(min_np)
-crest_factor_margin_np = preprocessing.normalize(crest_factor_margin_np)
-max_np = preprocessing.normalize(max_np)
-rms_np = preprocessing.normalize(rms_np)
-median_np = preprocessing.normalize(median_np)
-var_np = preprocessing.normalize(var_np)
-mean_np = preprocessing.normalize(mean_np)
+
+def normalize (x):
+    normalizedData = (x-np.min(x))/(np.max(x)-np.min(x))
+    return normalizedData
+
+
+kortosis_np = normalize(kortosis_np)
+a_factor_np = normalize(a_factor_np)
+std_np = normalize(std_np)
+sum_np = normalize(sum_np)
+ptp_np = normalize(ptp_np)
+skewness_np = normalize(skewness_np)
+sum_of_squares_np = normalize(sum_of_squares_np)
+margin_factor_np = normalize(margin_factor_np)
+min_np = normalize(min_np)
+crest_factor_margin_np = normalize(crest_factor_margin_np)
+max_np = normalize(max_np)
+rms_np = normalize(rms_np)
+median_np = normalize(median_np)
+var_np = normalize(var_np)
+mean_np = normalize(mean_np)
 
 
 features_np = np.zeros((500,15))
